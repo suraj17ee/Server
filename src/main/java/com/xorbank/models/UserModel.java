@@ -1,4 +1,4 @@
-package com.server.models;
+package com.xorbank.models;
 
 import javax.persistence.Entity;
 

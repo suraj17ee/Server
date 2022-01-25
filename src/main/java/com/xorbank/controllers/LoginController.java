@@ -1,4 +1,4 @@
-package com.server.controllers;
+package com.xorbank.controllers;
 
 public class LoginController {
 
