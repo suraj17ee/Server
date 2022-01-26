@@ -1,5 +1,9 @@
 package com.xorbank.repository;
 
-public interface UserRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import com.xorbank.models.User;
+
+public interface UserRepository extends CrudRepository<User,Integer>{
 
 }
