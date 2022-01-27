@@ -1,5 +1,7 @@
 package com.xorbank.controllers;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,10 +18,11 @@ public class RestApiController {
 	private SignUpService signupService;
 	
 	@PostMapping("/save")
+	@Transactional
 	public String signUpUser(User user)
 	{
 		signupService.saveUser(user);
-		return null;
+		return "SignUp Successful..!";
 		
 	}
 
