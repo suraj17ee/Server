@@ -4,6 +4,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +12,7 @@ import com.xorbank.models.User;
 import com.xorbank.services.SignUpService;
 
 @RestController
-@RequestMapping("/signup")
+@RequestMapping("/server")
 public class RestApiController {
 	
 	@Autowired
@@ -19,10 +20,11 @@ public class RestApiController {
 	
 	@PostMapping("/save")
 	@Transactional
-	public String signUpUser(User user)
+	
+	public String signUpUser(@RequestBody User user)
 	{
 		signupService.saveUser(user);
-		return "SignUp Successful..!";
+		return user.getFirstname()+"  SignUp Successful..!";
 		
 	}
 

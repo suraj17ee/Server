@@ -1,58 +1,66 @@
 package com.xorbank.models;
 
-import java.time.LocalDate;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="userdata")
 public class User {				
 	
 	@Id
-	private String username;
-	private String firstName;
-	private String lastName;
+	private int userid;
+	@Column
+	private String firstname;
+	@Column
+	private String lastname;
+	@Column
 	private String email;
-	private int mobileNo;
-	private LocalDate dateOfBirth;
+	@Column
+	private int mobile;
+	@Column
+	private String dateofbirth;
+	@Column
 	private String gender;
+	@Column
 	private String password;
 
+
+	public User(){}
 	
-	public User(String username, String firstName, String lastName, String email, int mobileNo,
-			LocalDate dateOfBirth, String gender, String password) {
+	public User(int userid, String firstname, String lastname, String email, int mobile,
+			String dateofbirth, String gender, String password) {
 		super();
-		this.username = username;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.userid = userid;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.email = email;
-		this.mobileNo = mobileNo;
-		this.dateOfBirth = dateOfBirth;
+		this.mobile = mobile;
+		this.dateofbirth = dateofbirth;
 		this.gender = gender;
 		this.password = password;
 	}
 
 
-	public User(){}
 	
-	
-	public String getUsername() {
-		return username;
+	public int getUserid() {
+		return userid;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getFirstname() {
+		return firstname;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 	public String getEmail() {
 		return email;
@@ -60,17 +68,17 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getMobileNo() {
-		return mobileNo;
+	public int getMobile() {
+		return mobile;
 	}
-	public void setMobileNo(int mobileNo) {
-		this.mobileNo = mobileNo;
+	public void setMobile(int mobile) {
+		this.mobile = mobile;
 	}
-	public LocalDate getDateOfBirth() {
-		return dateOfBirth;
+	public String getDateofbirth() {
+		return dateofbirth;
 	}
-	public void setDateOfBirth(LocalDate dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setDateofbirth(String dateofbirth) {
+		this.dateofbirth = dateofbirth;
 	}
 	public String getGender() {
 		return gender;
@@ -88,8 +96,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
-				+ email + ", mobileNo=" + mobileNo + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender
+		return "User [userID=" + userid + ", firstName=" + firstname + ", lastName=" + lastname + ", email="
+				+ email + ", mobileNo=" + mobile + ", dateOfBirth=" + dateofbirth + ", gender=" + gender
 				+ ", password=" + password + "]";
 	}
 	
